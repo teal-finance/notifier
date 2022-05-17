@@ -1,2 +1,3 @@
-# oracle
-some software bots to send notifications and alerts
+# notifier
+
+A golang package to send notification on some apps.
