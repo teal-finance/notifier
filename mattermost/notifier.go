@@ -25,7 +25,7 @@ func (n Notifier) Notify(msg string) error {
 		bytes.NewBuffer([]byte(`{"text":"`+msg+`"}`)),
 	)
 	if err != nil {
-		return fmt.Errorf("notify: host=%s %v", n.host(), err)
+		return fmt.Errorf("notify: host=%s %w", n.host(), err)
 	}
 	defer resp.Body.Close()
 
