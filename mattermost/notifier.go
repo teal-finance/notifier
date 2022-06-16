@@ -13,9 +13,7 @@ type Notifier struct {
 
 // NewNotifier creates a new Notifier given a Mattermost server endpoint (see mattermost hooks).
 func NewNotifier(endpoint string) Notifier {
-	return Notifier{
-		endpoint: endpoint,
-	}
+	return Notifier{endpoint}
 }
 
 // Notify sends a message to the Mattermost server.
