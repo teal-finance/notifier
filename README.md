@@ -2,7 +2,7 @@
 
 ![workflow](https://github.com/teal-finance/notifier/actions/workflows/go.yml/badge.svg)
 [![Go Report](https://goreportcard.com/badge/github.com/teal-finance/notifier)](https://goreportcard.com/report/github.com/teal-finance/notifier)
-[![Go Version](https://img.shields.io/github/go-mod/go-version/kahlys/alfred.svg)](https://github.com/teal-finance/notifier)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/teal-finance/notifier.svg)](https://github.com/teal-finance/notifier)
 [![Go Reference](https://pkg.go.dev/badge/github.com/teal-finance/notifier.svg)](https://pkg.go.dev/github.com/teal-finance/notifier)
 
 A golang package to send notification on some apps.
