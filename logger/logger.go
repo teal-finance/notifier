@@ -15,6 +15,6 @@ func NewNotifier() Notifier {
 
 // Notify prints the messages to the logs.
 func (n Notifier) Notify(msg string) error {
-	log.Print("LoggerNotifier: ", msg)
+	log.Print("INF LoggerNotifier: ", msg)
 	return nil
 }
