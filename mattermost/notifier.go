@@ -25,12 +25,12 @@ func (n Notifier) Notify(msg string) error {
 		bytes.NewBuffer([]byte(`{"text":"`+msg+`"}`)),
 	)
 	if err != nil {
-		return fmt.Errorf("notify: host=%s %w", n.host(), err)
+		return fmt.Errorf("mattermost notify: %w from host=%s", err, n.host())
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("notify: host=%s http status code %d", n.host(), resp.StatusCode)
+		return fmt.Errorf("mattermost notify: %s from host=%s", resp.Status, n.host())
 	}
 	return nil
 }
