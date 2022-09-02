@@ -21,7 +21,7 @@ func NewNotifier() Notifier {
 
 // Notify prints the messages to the logs.
 func (n Notifier) Notify(msg string) error {
-	log.Info("LoggerNotifier: ", sanitize(msg))
+	log.Info("LoggerNotifier:", sanitize(msg))
 	return nil
 }
 
