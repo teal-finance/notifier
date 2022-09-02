@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"strconv"
 )
 
 // Notifier for sending messages to a Mattermost server.
@@ -19,11 +20,11 @@ func NewNotifier(endpoint string) Notifier {
 
 // Notify sends a message to the Mattermost server.
 func (n Notifier) Notify(msg string) error {
-	resp, err := http.Post(
-		n.endpoint,
-		"application/json",
-		bytes.NewBuffer([]byte(`{"text":"`+msg+`"}`)),
-	)
+	buf := strconv.AppendQuoteToGraphic([]byte(`{"text":`), msg)
+	buf = append(buf, byte('}'))
+	body := bytes.NewBuffer(buf)
+
+	resp, err := http.Post(n.endpoint, "application/json", body)
 	if err != nil {
 		return fmt.Errorf("mattermost notify: %w from host=%s", err, n.host())
 	}
