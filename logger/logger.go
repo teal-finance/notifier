@@ -2,10 +2,14 @@
 package logger
 
 import (
-	"log"
 	"strings"
 	"unicode/utf8"
+
+	"github.com/teal-finance/emo"
 )
+
+var log = emo.NewZone("ntf")
+
 
 // Notifier is an empty struct.
 type Notifier struct{}
@@ -17,7 +21,7 @@ func NewNotifier() Notifier {
 
 // Notify prints the messages to the logs.
 func (n Notifier) Notify(msg string) error {
-	log.Print("INF LoggerNotifier: ", sanitize(msg))
+	log.Info("LoggerNotifier: ", sanitize(msg))
 	return nil
 }
 
