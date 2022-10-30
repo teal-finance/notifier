@@ -8,6 +8,9 @@ import (
 	"net/url"
 )
 
+// how to add find groupd chat
+// https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id
+
 // Bot is a telegram bot for a specific chat room
 type Bot struct {
 	botToken string
