@@ -10,7 +10,6 @@ import (
 
 var log = emo.NewZone("ntf")
 
-
 // Notifier is an empty struct.
 type Notifier struct{}
 
